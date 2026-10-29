@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coach Valorant</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+  /* Layout: single reading column, product-page style. Ink + teal, amber for status. */
+  :root {
+    --bg: #f5f7f7;
+    --surface: #ffffff;
+    --fg: #14232b;
+    --muted: #55696f;
+    --line: #d5dfe1;
+    --accent: #0b6e72;
+    --accent-soft: #e0f0f0;
+    --status: #a35a00;
+    --status-soft: #fbeedb;
+    --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+    --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e171b; --surface: #15232a; --fg: #e6eef0; --muted: #98aeb4; --line: #28404a;
+      --accent: #5cc9cd; --accent-soft: #14343a; --status: #f0b35a; --status-soft: #33260f;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e171b; --surface: #15232a; --fg: #e6eef0; --muted: #98aeb4; --line: #28404a;
+    --accent: #5cc9cd; --accent-soft: #14343a; --status: #f0b35a; --status-soft: #33260f;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+    padding-block: 40px 56px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  main { max-width: 720px; margin: 0 auto; display: grid; gap: 40px; }
+  h1, h2 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(2rem, 6vw, 2.9rem); letter-spacing: -0.02em; }
+  h2 { font-size: 1.35rem; margin-bottom: 12px; }
+  p { margin: 0 0 12px; max-width: 65ch; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; max-width: 65ch; }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 12px;
+  }
+  .lede { font-size: 1.15rem; color: var(--muted); margin-top: 16px; }
+  .pill {
+    display: inline-block; font-size: 0.8rem; font-weight: 600; padding: 2px 10px; border-radius: 999px;
+    background: var(--status-soft); color: var(--status); vertical-align: middle; margin-left: 8px;
+  }
+
+  .phases { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .phase { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; min-width: 0; }
+  .phase h3 { font-family: var(--font-display); font-size: 1.05rem; margin: 0 0 6px; }
+  .phase p { color: var(--muted); font-size: 0.95rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .scroll { overflow-x: auto; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+  td:first-child { font-family: var(--font-mono); font-size: 0.85rem; white-space: nowrap; }
+
+  .sample { background: var(--accent-soft); border-radius: 6px; padding: 16px 18px; }
+  .sample p { margin-bottom: 8px; }
+  .sample .tag { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--line); padding-top: 20px; color: var(--muted); font-size: 0.85rem; }
+  footer p { max-width: 70ch; }
+</style>
+
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Product page · VALORANT · Overwolf for Windows</div>
+    <h1>Coach Valorant<span class="pill">In development</span></h1>
+    <p class="lede">A voice coach that tells players how they played. It speaks about a player's own performance, in their own language, after the match and later after each round. It never gives instructions during a round.</p>
+  </header>
+
+  <section>
+    <h2>What it does</h2>
+    <p>Coach Valorant reads match data from the Overwolf Game Events Provider and finds patterns in the player's own play, then says them out loud in Brazilian Portuguese. Examples of what it points out:</p>
+    <ul>
+      <li>Dying in the first seconds of rounds, and whether it happens more on attack or defense.</li>
+      <li>Losing the first duel of the round several times in a match.</li>
+      <li>Share of shots that hit the head and the legs.</li>
+      <li>Damage dealt compared with damage received.</li>
+      <li>How the match compares with the player's own recent matches, plus what went well.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Roadmap</h2>
+    <div class="phases">
+      <div class="phase">
+        <h3>Phase 1 · current (v0.1)</h3>
+        <p>Speaks once, when a match ends: a summary of patterns and personal tips.</p>
+      </div>
+      <div class="phase">
+        <h3>Phase 2 · planned</h3>
+        <p>Speaks only after a round has ended, with feedback on that round and personal tips. It never speaks while a round is in progress. This phase will follow Riot's review and guidance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Example of what the player hears</h2>
+    <div class="sample">
+      <p>"Derrota, 4 a 6 em Ascent com Jett. Você fez 11 abates e 6 mortes. 3 pontos de atenção. 1. Você morreu nos primeiros 25 segundos do round em 4 dos 6 rounds em que morreu. [...]"</p>
+      <p class="tag">Output generated from a simulated match used for testing. In English: "Defeat, 4 to 6 on Ascent with Jett. You got 11 kills and 6 deaths. 3 points of attention. 1. You died in the first 25 seconds of the round in 4 of the 6 rounds you died. [...]"</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Game integrity</h2>
+    <ul>
+      <li>Uses only official Overwolf Game Events Provider data.</li>
+      <li>Does not read game memory, inject into the game, or automate any input.</li>
+      <li>Does not reveal information the player cannot already see in the game.</li>
+      <li>Gives no real-time tactical instructions. Feedback is about what already happened, so the player can learn from it.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Data</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Source</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>Overwolf GEP</td><td>Kills, deaths, assists, round phase, score, round report (damage and hit zones), kill feed, map and agent.</td></tr>
+          <tr><td>Riot APIs</td><td>Not used at this time. If added later, the product will request access and use Riot Sign On with player opt-in.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Privacy</h2>
+    <p>Match history is stored only on the player's PC. The app sends no data to external servers. Speech uses the text-to-speech voices already installed in Windows.</p>
+  </section>
+
+  <section>
+    <h2>Monetization</h2>
+    <p>None at this stage.</p>
+  </section>
+
+  <footer>
+    <p>Coach Valorant is an independent project. It is not endorsed by or affiliated with Riot Games, Inc. VALORANT and Riot Games are trademarks or registered trademarks of Riot Games, Inc. Contact details are in the product registration on the Riot Developer Portal.</p>
+  </footer>
+</main>
+</body>
+</html>
